@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — MySpot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1D3DB0;
+      --blue-light: #EEF2FF;
+      --text: #111827;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #FAFAFA;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+
+    .contact-card p {
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: #374151;
+      margin-bottom: 14px;
+      font-size: 15.5px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: white;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-question:hover {
+      background: var(--bg);
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 16px;
+      font-size: 15px;
+      color: #4B5563;
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Troubleshooting steps */
+    ol {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+
+    ol li {
+      color: #374151;
+      font-size: 15.5px;
+      padding: 4px 0;
+    }
+
+    /* App info table */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .info-table td {
+      padding: 12px 0;
+      font-size: 15px;
+      color: #374151;
+    }
+
+    .info-table td:last-child {
+      text-align: right;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+    </div>
+    <span class="logo-text">MySpot</span>
+  </header>
+
+  <div class="container">
+
+    <h1 class="page-title">Help & Support</h1>
+    <p class="subtitle">We're here to help. Find answers below or reach out directly.</p>
+
+    <div class="contact-card">
+      <p>Have a question or need help? Email us at <a href="mailto:support@onethirteenlabs.com">support@onethirteenlabs.com</a> and we'll get back to you as soon as possible.</p>
+    </div>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Location permissions not working?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Go to Settings → Privacy & Security → Location Services → MySpot and select "While Using App". Restart the app after changing permissions.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Timer notifications not appearing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Check Settings → Notifications → MySpot and ensure notifications are enabled. Also verify you haven't enabled Do Not Disturb mode in the app or on your device.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Can't find my saved parking location?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Check your Parking History in Profile → Parking History. If it's missing, you may have accidentally tapped "Found My Car" which clears the active session.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I add multiple vehicles?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Multiple vehicles require MySpot Premium. Go to Profile → Upgrade to Premium to unlock unlimited vehicle management for a one-time $3.99 purchase.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          GPS accuracy issues?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Ensure you're outdoors with a clear view of the sky. Indoor parking garages may have reduced GPS accuracy. For best results, save your location before entering the garage.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I restore my Premium purchase?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Go to Profile → Upgrade to Premium → Restore Purchases. This will restore your Premium features if you previously purchased on the same Apple ID.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          App crashing or freezing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Try force-closing the app and reopening it. If issues persist, restart your iPhone. If problems continue, please contact us at support@onethirteenlabs.com.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I delete my parking history?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Premium users can delete history in Profile → Parking History → menu (•••) → Clear All History. Free users only see their current active session.
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Troubleshooting</h2>
+      <p>Still having issues? Try these steps in order:</p>
+      <ol>
+        <li>Check your iOS version (MySpot requires iOS 17.0 or later)</li>
+        <li>Ensure you have the latest version of MySpot installed</li>
+        <li>Force-close the app and reopen it</li>
+        <li>Restart your iPhone</li>
+        <li>Contact us at <a href="mailto:support@onethirteenlabs.com">support@onethirteenlabs.com</a> if problems persist</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>App Information</h2>
+      <table class="info-table">
+        <tr>
+          <td>Version</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td>iOS Requirement</td>
+          <td>17.0+</td>
+        </tr>
+        <tr>
+          <td>Developer</td>
+          <td>One Thirteen Labs</td>
+        </tr>
+        <tr>
+          <td>Privacy Policy</td>
+          <td><a href="./privacy-myspot.html">View Policy</a></td>
+        </tr>
+      </table>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 One Thirteen Labs. All rights reserved. · <a href="./privacy-myspot.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
